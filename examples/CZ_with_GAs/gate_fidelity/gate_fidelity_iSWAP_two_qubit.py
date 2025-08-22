@@ -98,5 +98,7 @@ for j in range(n_Gp):
 plt.scatter(Gps,R1)
 plt.show()
 
+blt.output['slope'] = np.polyfit(Gps, R1, 1)[0]
+
 np.savetxt("Fidelity_iSWAP_2_qubit_vs_Gp.OUT", np.transpose([Gps,r1,r2,r3,r4]))
 np.savetxt("Fidelity_iSWAP_2_qubit_vs_G1.OUT", np.transpose([Gps,R1,R2,R3,R4]))
