@@ -95,7 +95,7 @@ for j in range(n_Gp):
   R4[j]=F4  
 
 
-plt.scatter(Gps,r1)
+plt.scatter(Gps,R1)
 plt.show()
 
 np.savetxt("Fidelity_iSWAP_2_qubit_vs_Gp.OUT", np.transpose([Gps,r1,r2,r3,r4]))
