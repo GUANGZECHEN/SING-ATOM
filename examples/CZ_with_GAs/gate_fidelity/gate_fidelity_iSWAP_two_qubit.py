@@ -93,6 +93,10 @@ for j in range(n_Gp):
   Q4=get_Choi_noisy_iSWAP(Gp,G1s[3])
   F4=fidelity(P,Q4)**2    
   R4[j]=F4  
-  
+
+
+plt.scatter(Gps,r1)
+plt.show()
+
 np.savetxt("Fidelity_iSWAP_2_qubit_vs_Gp.OUT", np.transpose([Gps,r1,r2,r3,r4]))
 np.savetxt("Fidelity_iSWAP_2_qubit_vs_G1.OUT", np.transpose([Gps,R1,R2,R3,R4]))
