@@ -36,7 +36,7 @@ psi0=tensor([p1,p0,p0,p0])
 t_tot=2
 nt=51
 times=np.linspace(0, t_tot, nt)
-l=10 # number of trotter steps, 50 allows a time of arounnd 7.5 to have high precision
+l=2 # number of trotter steps, 50 allows a time of arounnd 7.5 to have high precision
 
 N1=O_i(n1,0,N)
 N2=O_i(n1,1,N)
