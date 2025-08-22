@@ -34,8 +34,8 @@ def get_Choi_noisy_iSWAP(Gamma,Gamma_phi):    # g=1
        
   return psi_t
   
-n_G1=4  
-n_Gp=51
+n_G1= int(blt.params['n_G1'])
+n_Gp= int(blt.params['n_Gp'])
 G1s=np.linspace(0,0.01,n_G1)
 Gps=np.linspace(0,0.01,n_Gp)
 
