@@ -26,22 +26,39 @@ def O_i(O,i,N,idd=id3):
 
   return X
   
-def O_ij(O1,O2,i,j,N,idd=id3):
-  X=idd
-  if i==0:
-    X=O1
-  elif j==0:
-    X=O2 
+#def O_ij(O1,O2,i,j,N,idd=id3):
+#  X=idd
+#  if i==0:
+#    X=O1
+#  elif j==0:
+#    X=O2 
   
-  for ii in range(1,N):
-    if ii==i:
-      X=tensor(X,O1)
-    elif ii==j:
-      X=tensor(X,O2)
-    else:
-      X=tensor(X,idd)
+#  for ii in range(1,N):
+#    if ii==i:
+#      X=tensor(X,O1)
+#    elif ii==j:
+#      X=tensor(X,O2)
+#    else:
+#      X=tensor(X,idd)
 
-  return X
+#  return X
+  
+def O_ij(O1, O2, i, j, N, idd=id3):
+    """
+    Efficiently builds an operator acting as O1 on site i,
+    O2 on site j, and identity elsewhere in an N-qutrit system.
+    """
+    op_list = []
+
+    for pos in range(N):
+        if pos == i:
+            op_list.append(O1)
+        elif pos == j:
+            op_list.append(O2)
+        else:
+            op_list.append(idd)
+
+    return tensor(op_list)
   
 def RXY3(i,j,N,theta,psi):  # rotation along xy for -theta (e^-iHt)
   H=O_ij(s01,s10,i,j,N,id3)+O_ij(s10,s01,i,j,N,id3)
